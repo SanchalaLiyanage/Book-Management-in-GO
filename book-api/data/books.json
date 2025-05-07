@@ -1,0 +1,32 @@
+[
+  {
+    "bookId": "3f67c822-99a0-4ed4-ad8a-c9d8651d4a81",
+    "authorId": "e0d91f68-a183-477d-8aa4-1f44ccc78a70",
+    "publisherId": "2f7b19e9-b268-4440-a15b-bed8177ed607",
+    "title": "The Great Gatsby - Updated Edition",
+    "publicationDate": "1925-04-10",
+    "isbn": "9780743273565",
+    "pages": 200,
+    "genre": "Classic Novel",
+    "description": "Updated description of this classic novel about wealth, love, and the American Dream in the Roaring Twenties.",
+    "price": 19.99,
+    "quantity": 10,
+    "createdAt": "2025-03-28T13:35:06.6723494+05:30",
+    "updatedAt": "2025-04-25T19:45:04.42753+05:30"
+  },
+  {
+    "bookId": "16faca50-44d1-430f-af8b-e92aff2ca422",
+    "authorId": "e0d91f68-a183-477d-8aa4-1f44ccc78a70",
+    "publisherId": "2f7b19e9-b268-4440-a15b-bed8177ed607",
+    "title": "Valid Book Title",
+    "publicationDate": "",
+    "isbn": "9780123456789",
+    "pages": 200,
+    "genre": "Fiction",
+    "description": "A valid book description",
+    "price": 19.99,
+    "quantity": 0,
+    "createdAt": "2025-03-28T13:47:06.9191027+05:30",
+    "updatedAt": "2025-03-28T13:47:06.9191027+05:30"
+  }
+]

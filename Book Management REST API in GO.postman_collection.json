@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "f09701e0-9b63-49f6-9282-b6938245a081",
+		"name": "Book Management REST API in GO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36983116"
+	},
+	"item": [
+		{
+			"name": "CRUD Operations",
+			"item": [
+				{
+					"name": "Create a new book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n \"bookId\": \"bb329a31-6b1e-4daa-87ee-71631aa05867\",\r\n \"authorId\": \"e0d91f68-a183-477d-8aa4-1f44ccc78a70\",\r\n \"publisherId\": \"2f7b19e9-b268-4440-a15b-bed8177ed607\",\r\n \"title\": \"The Great Gatsby 7\",\r\n \"publicationDate\": \"1925-04-10\",\r\n \"isbn\": \"9780743273565\",\r\n \"pages\": 180,\r\n \"genre\": \"Novel\",\r\n \"description\": \"Set in the 1920s, this classic novel explores themes of wealth, love, and the American Dream.\",\r\n\"price\": 15.99,\r\n \"quantity\": 5\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return a list of all books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Return a single book by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/3f67c822-99a0-4ed4-ad8a-c9d8651d4a81",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"3f67c822-99a0-4ed4-ad8a-c9d8651d4a81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a single book by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"The Great Gatsby - Updated Edition\",\r\n    \"authorId\": \"e0d91f68-a183-477d-8aa4-1f44ccc78a70\",\r\n    \"publisherId\": \"2f7b19e9-b268-4440-a15b-bed8177ed607\",\r\n    \"publicationDate\": \"1925-04-10\",\r\n    \"isbn\": \"9780743273565\",\r\n    \"pages\": 200,\r\n    \"genre\": \"Classic Novel\",\r\n    \"description\": \"Updated description of this classic novel about wealth, love, and the American Dream in the Roaring Twenties.\",\r\n    \"price\": 19.99,\r\n    \"quantity\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/3f67c822-99a0-4ed4-ad8a-c9d8651d4a81",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"3f67c822-99a0-4ed4-ad8a-c9d8651d4a81"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a single book by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/bb329a31-6b1e-4daa-87ee-71631aa05866",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"bb329a31-6b1e-4daa-87ee-71631aa05866"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Paginated Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books?limit=2&offset=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search Endpoints",
+			"item": [
+				{
+					"name": "Paginated Book List - Page 2 (2 items per page)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books?limit=2&offset=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "2"
+								},
+								{
+									"key": "offset",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Books - 'Gatsby'",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/search?q=Gatsby",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Gatsby"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error Cases",
+			"item": [
+				{
+					"name": "Create Book with Missing Required Fields",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"title\": \"Valid Book Titlea\",\r\n  \"authorId\": \"e0d91f68-a183-477d-8aa4-1f44ccc78a70\",\r\n  \"publisherId\": \"2f7b19e9-b268-4440-a15b-bed8177ed607\",\r\n  \"price\": 19.99,\r\n  \"pages\": 200,\r\n  \"genre\": \"Fiction\",\r\n  \"description\": \"A valid book descriptionq\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Book ID Format",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Without Query Parameter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Non-Existent Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"title\": \"The Great 1\"\r\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books/fdb63470-bd4e-4bba-912c-9906ef2128c4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"fdb63470-bd4e-4bba-912c-9906ef2128c4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Non-Existent Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/books/fdb63470-bd4e-4bba-912c-9906ef2128c4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books",
+								"fdb63470-bd4e-4bba-912c-9906ef2128c4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Empty Request Body",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
